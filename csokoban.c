@@ -49,6 +49,7 @@ int main(int argc, char * const argv[]) {
         int map_number = config.map_number;
         if (map_number < 0 || map_number >= total_maps) {
                 printf("Selected map number out of bounds! Must be between 1 and %d.\n", total_maps);
+                maps_free(maps, total_maps);
                 exit(1);
         }
 
