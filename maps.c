@@ -28,18 +28,21 @@ int maps_load(Map maps[], char *maps_filename, int max_maps) {
                 maps[n].height = 0;
                 /* Read lines into buffer */
                 while (maps[n].height < MAX_MAP_HEIGHT) {
-                        getline(&(buf[maps[n].height]), &len, f);
-                        /* Stop when empty line found */
-                        int l = strlen(buf[maps[n].height]);
-                        if (l <= 1)
+                        if (getline(&(buf[maps[n].height]), &len, f) == -1)
                                 break;
-                        /* Skip any lines not starting with '#' or ' '.
+                        /* Stop when empty line found */
+                        if (buf[maps[n].height][0] == '\n' ||
+                            buf[maps[n].height][0] == '\r')
+                                break;
+                        /* Skip any lines not starting with '#', ' ', '-', '_'.
                            In other words, comment lines must start with something else. */
                         if (buf[maps[n].height][0] != '#' &&
-                            buf[maps[n].height][0] != ' ')
+                            buf[maps[n].height][0] != ' ' &&
+                            buf[maps[n].height][0] != '-' &&
+                            buf[maps[n].height][0] != '_')
                                 continue;
                         /* Recalculate the width of the map */
-                        maps[n].width = MAX(l, maps[n].width);
+                        maps[n].width = MAX(strlen(buf[maps[n].height]), maps[n].width);
                         maps[n].height++;
                 }
                 /* Skip empty maps */

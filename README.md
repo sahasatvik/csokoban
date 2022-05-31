@@ -50,7 +50,7 @@ As an example, consider `demolevels.txt`.
 You can load this file using `./csokoban -l demolevels.txt`.
 
 Different maps must be separated by empty lines.
-Map lines, containing tile data, must start with either `#` or ` ` (a blank space).
+Map lines, containing tile data, must start with either a `#` (wall) or ` `, `-`, `_` (floor).
 Use the following key.
 
 | Character     |   Tile                        |
