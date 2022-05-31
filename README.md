@@ -30,14 +30,14 @@ keys:
 As an example, consider `demolevels.txt`.
 
 ```
-; 7 5
 #######
 #@   ##
 #  $ .#
 ##  ###
 #######
 
-; 6 7
+; The * represents a box
+; on top of a target square
 ####
 # .#
 #  ###
@@ -47,8 +47,11 @@ As an example, consider `demolevels.txt`.
 ####
 ```
 
-Each map definition starts with a header `; width height`. The next `height` lines
-contain tile data, according to the following key.
+You can load this file using `./csokoban -l demolevels.txt`.
+
+Different maps must be separated by empty lines.
+Map lines, containing tile data, must start with either `#` or ` ` (a blank space).
+Use the following key.
 
 | Character     |   Tile                        |
 |---------------|-------------------------------|
@@ -60,16 +63,14 @@ contain tile data, according to the following key.
 | `@`           | Player starting square        |
 | `+`/`&`       | Player, on a target square    |
 
-You can load this file using `./csokoban -l demolevels.txt`.
+All other lines are ignored, interpreted as comments.
 
 The default levels (`levels.txt`) have been taken from [Deepmind's boxoban
-levels](https://github.com/deepmind/boxoban-levels), with minor modifications.
-To load one of those files, you must first fix the headers, replacing each `;
-[number]` with `; 10 10`. This can easily be done with the substitution
-`s/;.*$/; 10 10/g`. For instance, use
+levels](https://github.com/deepmind/boxoban-levels). You can simply download
+any of these files and play, as follows.
 
 ```
 wget https://raw.githubusercontent.com/deepmind/boxoban-levels/master/medium/train/000.txt
-sed 's/;.*$/; 10 10/g' 000.txt > levels.txt
+./csokoban -l 000.txt
 ```
 

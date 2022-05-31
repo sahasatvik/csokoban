@@ -1,6 +1,9 @@
 #ifndef _MAPS_H
 #define _MAPS_H
 
+#define MAX_MAP_WIDTH   100
+#define MAX_MAP_HEIGHT  100
+
 typedef struct {
         int id;
         int width;

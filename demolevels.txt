@@ -1,11 +1,11 @@
-; 7 5
 #######
 #@   ##
 #  $ .#
 ##  ###
 #######
 
-; 6 7
+; The * represents a box
+; on top of a target square
 ####
 # .#
 #  ###
