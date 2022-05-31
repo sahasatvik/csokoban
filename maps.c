@@ -16,7 +16,7 @@ int maps_load(Map maps[], char *maps_filename, int max_maps) {
         /* Setup temporary buffer for holding a map */
         char *buf[MAX_MAP_HEIGHT];
         for (int i = 0; i < MAX_MAP_HEIGHT; i++) {
-                buf[i] = malloc(MAX_MAP_WIDTH * sizeof(char *));
+                buf[i] = malloc(MAX_MAP_WIDTH * sizeof(char));
         }
 
         size_t len;
