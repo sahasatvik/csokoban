@@ -110,6 +110,7 @@ void board_load(Board *board, char **map) {
                            and map it to a tile */
                         switch(map[board->height - j - 1][i]) {
                                 case ' ':
+                                case '-':
                                 case '_':
                                         t = FLOOR;
                                         break;
@@ -119,6 +120,7 @@ void board_load(Board *board, char **map) {
                                 case '$':
                                         t = BOX;
                                         break;
+                                case '*':
                                 case '%':
                                         t = BOX_TARGET;
                                         break;
@@ -132,6 +134,7 @@ void board_load(Board *board, char **map) {
                                         board->player.x = i;
                                         board->player.y = j;
                                         break;
+                                case '+':
                                 case '&':
                                         t = PLAYER_TARGET;
                                         board->player.x = i;

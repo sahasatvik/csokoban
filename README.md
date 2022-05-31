@@ -33,15 +33,15 @@ As an example, consider `demolevels.txt`.
 ; 7 5
 #######
 #@   ##
-#  $ x#
+#  $ .#
 ##  ###
 #######
 
 ; 6 7
 ####
-# x#
+# .#
 #  ###
-#%@  #
+#*@  #
 #  $ #
 #  ###
 ####
@@ -52,13 +52,13 @@ contain tile data, according to the following key.
 
 | Character     |   Tile                        |
 |---------------|-------------------------------|
-| ` `/`_`       | Empty floor                   |
+| ` `/`-`/`_`   | Empty floor                   |
 | `#`           | Wall                          |
 | `$`           | Box                           |
-| `%`           | Box, already on target square |
+| `*`/`%`       | Box, already on target square |
 | `.`/`x`/`X`   | Target square                 |
 | `@`           | Player starting square        |
-| `&`           | Player, on a target square    |
+| `+`/`&`       | Player, on a target square    |
 
 You can load this file using `./csokoban -l demolevels.txt`.
 
