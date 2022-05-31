@@ -12,11 +12,11 @@ Execute `./csokoban -h` for the following help message.
 ```
 The game Sokoban, implemented in C for the terminal.
 
-usage: csokoban [-hs] [-l mapfile] [-n map_number]
+usage: csokoban [-hs] [-l mapfile] [-n mapnumber]
     -h  Show this help message
     -s  Shuffle maps
     -l  Load puzzles from 'mapfile'
-    -n  Start from map 'map_number'
+    -n  Start from map 'mapnumber'
 
 keys:
     h j k l     Move the player character left/down/up/right
@@ -24,7 +24,6 @@ keys:
           q     Quit
           r     Restart the current map
         > <     Skip to the next/previous map
-
 ```
 
 ## Level data
@@ -46,7 +45,6 @@ As an example, consider `demolevels.txt`.
 #  $ #
 #  ###
 ####
-
 ```
 
 Each map definition starts with a header `; width height`. The next `height` lines

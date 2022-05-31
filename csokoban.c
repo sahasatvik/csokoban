@@ -259,11 +259,11 @@ void parse_args(struct Config *config, int argc, char * const argv[]) {
 }
 
 void usage() {
-        printf("usage: csokoban [-hs] [-l mapfile] [-n map_number]\n");
+        printf("usage: csokoban [-hs] [-l mapfile] [-n mapnumber]\n");
         printf("    -h  Show this help message\n");
         printf("    -s  Shuffle maps\n");
         printf("    -l  Load puzzles from 'mapfile'\n");
-        printf("    -n  Start from map 'map_number'\n");
+        printf("    -n  Start from map 'mapnumber'\n");
 }
 
 void usage_keys() {
