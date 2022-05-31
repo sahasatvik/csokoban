@@ -204,6 +204,7 @@ int main(int argc, char * const argv[]) {
         /* Free resources */
         board_free(board);
         screen_free(screen);
+        screen_free(screen_b);
 
         int last_id = maps[map_number].id;
         maps_free(maps, total_maps);
