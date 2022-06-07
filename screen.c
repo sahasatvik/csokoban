@@ -5,7 +5,7 @@
 #include "screen.h"
 
 /* ANSI color codes indexed by the 'Color' enum */ 
-char *colormap[8][8] = {
+static char *colormap[8][8] = {
         {
                 ANSI_FG_BLACK,
                 ANSI_FG_RED,

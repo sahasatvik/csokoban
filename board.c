@@ -4,7 +4,7 @@
 #include "screen.h"
 
 /* Direction deltas indexed by the 'Direction' enum */
-Point direction_delta[] = {
+static Point direction_delta[] = {
         { .x =  0, .y =  1 },
         { .x =  0, .y = -1 },
         { .x =  1, .y =  0 },
@@ -12,7 +12,7 @@ Point direction_delta[] = {
 };
 
 /* Tile appearances as Pixel objects, indexed by the 'Tile' enum */
-Pixel tilemap[] = {
+static Pixel tilemap[] = {
         { .item = "  ", .fg = WHITE,    .bg = BLACK  },
         { .item = "[]", .fg = RED,      .bg = BLACK  },
         { .item = "  ", .fg = WHITE,    .bg = YELLOW },
